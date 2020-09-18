@@ -5,8 +5,8 @@ pygame.init()
 mainWindow = pygame.display.set_mode(Data.window_size)      # setting the window x and y
 pygame.display.set_caption("Solar System")                  # setting the window title
 
-input_boxes = [InputBox(Data.window_size[0] - 355, 5, 80, 32, "Year"), InputBox(Data.window_size[0] - 265, 5, 80, 32, "Month"),
-               InputBox((Data.window_size[0] - 175), 5, 80, 32, "Day")]   # creating input boxes for year, month and day
+input_boxes = (InputBox(Data.window_size[0] - 355, 5, 80, 32, "Year"), InputBox(Data.window_size[0] - 265, 5, 80, 32, "Month"),
+               InputBox((Data.window_size[0] - 175), 5, 80, 32, "Day"))   # creating input boxes for year, month and day
 
 go_to_date_btn = Button((30, 203, 225), Data.window_size[0] - 85, 5, 75, 32, "Go to", "dubai", 30)
 ff_true_btn = Button((30, 203, 225), Data.window_size[0] - 420, 5, 50, 32, ">>", "dubai", 30)
