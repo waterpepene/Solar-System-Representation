@@ -10,15 +10,15 @@ def flip_planets_vertically(coords: tuple, window_y: int):  # this function flip
     return int(coords[0]), int(coords[1] + (((window_y / 2) - coords[1]) * 2))
 
 
-def draw_circle(surface, color, x, y, radius, fill: bool):  # draws a circle with anti-aliasing and returns
-    if fill:  # a pygame rect so that Rect.collidepoint() can
+def draw_circle(surface, color, x, y, radius, fill: bool):   # draws a circle with anti-aliasing and returns
+    if fill:                                                 # a pygame rect so that Rect.collidepoint() can
         gfxdraw.filled_circle(surface, x, y, radius, color)  # later be used on it.
         return pygame.Rect(x - radius, y - radius,
                            radius + radius, radius + radius)
-
-    gfxdraw.aacircle(surface, x, y, radius, color)  # these calculations are made to optimize the collision
-    return pygame.Rect(x - radius, y - radius,  # point between the mouse and the Rect
-                       radius + radius, radius + radius)
+    else:
+        gfxdraw.aacircle(surface, x, y, radius, color)           # these calculations are made to optimize the collision
+        return pygame.Rect(x - radius, y - radius,               # point between the mouse and the Rect
+                           radius + radius, radius + radius)
 
 
 def get_new_planet_pos(year, month, day):
